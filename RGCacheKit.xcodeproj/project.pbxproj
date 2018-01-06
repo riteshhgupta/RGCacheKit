@@ -12,6 +12,13 @@
 		3D119EEC1FFBDAA1001932AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D119EEA1FFBDAA1001932AA /* Main.storyboard */; };
 		3D119EEE1FFBDAA1001932AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D119EED1FFBDAA1001932AA /* Assets.xcassets */; };
 		3D119EF11FFBDAA1001932AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D119EEF1FFBDAA1001932AA /* LaunchScreen.storyboard */; };
+		3D119EFA1FFBDAF9001932AA /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119EF91FFBDAF9001932AA /* CoreDataStore.swift */; };
+		3D119EFC1FFBDC24001932AA /* NSManagedObject+EntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119EFB1FFBDC24001932AA /* NSManagedObject+EntityProvider.swift */; };
+		3D119EFE1FFD3FAF001932AA /* EntityFetchInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119EFD1FFD3FAF001932AA /* EntityFetchInfoProvider.swift */; };
+		3D119F001FFD3FCE001932AA /* PredicateComparisonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119EFF1FFD3FCE001932AA /* PredicateComparisonType.swift */; };
+		3D119F021FFD4598001932AA /* EntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119F011FFD4598001932AA /* EntityProvider.swift */; };
+		3D119F041FFD4751001932AA /* EntityContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119F031FFD4751001932AA /* EntityContext.swift */; };
+		3D119F061FFD49DF001932AA /* NSManagedContext+EntityContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D119F051FFD49DF001932AA /* NSManagedContext+EntityContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		3D119EED1FFBDAA1001932AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D119EF01FFBDAA1001932AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D119EF21FFBDAA1001932AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D119EF91FFBDAF9001932AA /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		3D119EFB1FFBDC24001932AA /* NSManagedObject+EntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+EntityProvider.swift"; sourceTree = "<group>"; };
+		3D119EFD1FFD3FAF001932AA /* EntityFetchInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetchInfoProvider.swift; sourceTree = "<group>"; };
+		3D119EFF1FFD3FCE001932AA /* PredicateComparisonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredicateComparisonType.swift; sourceTree = "<group>"; };
+		3D119F011FFD4598001932AA /* EntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProvider.swift; sourceTree = "<group>"; };
+		3D119F031FFD4751001932AA /* EntityContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityContext.swift; sourceTree = "<group>"; };
+		3D119F051FFD49DF001932AA /* NSManagedContext+EntityContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+EntityContext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 		3D119EDA1FFBDAA1001932AA = {
 			isa = PBXGroup;
 			children = (
+				3D119EF81FFBDAE2001932AA /* Source */,
 				3D119EE51FFBDAA1001932AA /* RGCacheKit */,
 				3D119EE41FFBDAA1001932AA /* Products */,
 			);
@@ -62,6 +77,20 @@
 				3D119EF21FFBDAA1001932AA /* Info.plist */,
 			);
 			path = RGCacheKit;
+			sourceTree = "<group>";
+		};
+		3D119EF81FFBDAE2001932AA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3D119EF91FFBDAF9001932AA /* CoreDataStore.swift */,
+				3D119F011FFD4598001932AA /* EntityProvider.swift */,
+				3D119EFD1FFD3FAF001932AA /* EntityFetchInfoProvider.swift */,
+				3D119EFF1FFD3FCE001932AA /* PredicateComparisonType.swift */,
+				3D119EFB1FFBDC24001932AA /* NSManagedObject+EntityProvider.swift */,
+				3D119F031FFD4751001932AA /* EntityContext.swift */,
+				3D119F051FFD49DF001932AA /* NSManagedContext+EntityContext.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +165,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D119F041FFD4751001932AA /* EntityContext.swift in Sources */,
 				3D119EE91FFBDAA1001932AA /* ViewController.swift in Sources */,
 				3D119EE71FFBDAA1001932AA /* AppDelegate.swift in Sources */,
+				3D119F061FFD49DF001932AA /* NSManagedContext+EntityContext.swift in Sources */,
+				3D119F001FFD3FCE001932AA /* PredicateComparisonType.swift in Sources */,
+				3D119EFE1FFD3FAF001932AA /* EntityFetchInfoProvider.swift in Sources */,
+				3D119EFA1FFBDAF9001932AA /* CoreDataStore.swift in Sources */,
+				3D119EFC1FFBDC24001932AA /* NSManagedObject+EntityProvider.swift in Sources */,
+				3D119F021FFD4598001932AA /* EntityProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,10 @@ extension NSManagedObject: EntityProvider {
 	}
 	
 	public class func allObjects<T: EntityFetchInfoProvider>(context: EntityContext) -> [T] {
-		return objects(context: context)
+		let sortDescriptors: [NSSortDescriptor]?
+		if let sortKey = T.defaultSortingKey { sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: T.isSortOrderAscending)] }
+		else { sortDescriptors = nil }
+		return objects(sortDescriptors: sortDescriptors, fetchLimit: Int.max, context: context)
 	}
 	
 	public class func objects<T: EntityFetchInfoProvider>(
@@ -39,7 +42,7 @@ extension NSManagedObject: EntityProvider {
 		sortKey: String? = T.defaultSortingKey,
 		isSortOrderAscending: Bool = T.isSortOrderAscending,
 		comparisonType: PredicateComparisonType = .equal,
-		fetchLimit: Int = 100,
+		fetchLimit: Int,
 		context: EntityContext) -> [T]
 	{
 		let predicateFormat = "\(key)" + comparisonType.rawValue + "%@"
@@ -56,7 +59,7 @@ extension NSManagedObject: EntityProvider {
 	public class func objects<T: EntityFetchInfoProvider>(
 		predicate: NSPredicate? = nil,
 		sortDescriptors: [NSSortDescriptor]? = nil,
-		fetchLimit: Int = 100,
+		fetchLimit: Int,
 		context: EntityContext) -> [T]
 	{
 		let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: T.entityName)
